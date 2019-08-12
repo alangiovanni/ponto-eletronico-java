@@ -5,10 +5,12 @@ Pré-requisitos:
 * Java JRE 8.0;
 * IDE Eclipse.
 
-Informações Pertinentes ao Software e ao Desenvolvedor Desenvolvedor.
-Nome: Alan Giovanni de Menezes Targino
-E-mail: agmtargino@gmail.com
-Este Software foi desenvolvido com o intuito de ser um sistema de ponto eletrônico para os estagiários do Tribunal Regional Eleitoral da Paraíba. Uma alternativa ao preenchimento dos pontos em uma folha A4 com caneta esferográfica. Esta documentação não é a documentação oficial sendo esta apenas uma orientação para aqueles que desejem conhecer o projeto.
+Informações Pertinentes ao Software e ao Desenvolvedor.
+
+* Nome: Alan Giovanni de Menezes Targino
+* E-mail: agmtargino@gmail.com
+
+Este Software foi desenvolvido com o intuito de ser um sistema de ponto eletrônico para os estagiários do Tribunal Regional Eleitoral da Paraíba. Uma alternativa ao preenchimento dos pontos em uma folha A4 com caneta esferográfica. *Esta documentação não é a documentação oficial sendo esta apenas uma orientação para aqueles que desejem conhecer o projeto.*
  
 O Software possui as seguintes funções:
 * Cadastro de Usuários;
@@ -20,12 +22,11 @@ O Software possui as seguintes funções:
 * Gerar separadamente ou em grupos, as folhas de ponto de cada usuário no formato PDF (Atribuição específica dos usuários administradores);
 * dentificação de usuário através de Login e Senha previamente cadastrados.
 
-O Software está em fase de desenvolvimento, as seguintes funções foram pensadas e serão implementadas, além daquelas sugeridas para implementação pelo Tribunal Regional Eleitoral da Paraíba e se somente se houver tempo de estágio suficiente:
+O Software está em fase de desenvolvimento, as seguintes funções foram pensadas e serão implementadas, se somente se houver tempo de estágio suficiente:
 * Logs de Registro de cada alteração feita pelos administradores;
 * Uma tela especial para supervisores dos usuários;
 * Assinatura Digital pelos supervisores nas folhas de ponto dos usuários; 
- 
- 
+
 Funcionamento do Software O arquivo Precise_Time.jar, não é um arquivo executável. Portanto precisa ser interpretado, dessa forma se faz necessário ter o software Java Runtime instalado na máquina que este arquivo será executado. A grande vantagem disso é a portabilidade, este software poderá ser executado em qualquer sistema operacional, desde que o sistema possua o Java instalado. 
 Imagens do software As imagens do sistema ficam armazenados dentro da pasta “Images”. É necessário permanecer na mesma pasta onde estiver o arquivo .jar.
 
