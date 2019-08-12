@@ -1,12 +1,1 @@
-DICA PARA GERAR O PDF DOS PONTOS
--> JASPER REPORTS (ESTUDAR ISSO)
-
--->> ATUALMENTE O SOFTWARE ESTÁ CADASTRANDO, REMOVENDO E ALTERANDO USUARIOS DO SISTEMA E ADMINISTRADORES DELE. 
-GERANDO RELATORIOS UNICOS E EM GRUPOS. ALTERANDO A FOLHA DE PONTO PARCIALMENTE PELO ADMINISTRADOR. MARCANDO, FECHANDO E ACOMPANHANDO OS PONTOS.
-
--->> Próximo Passo: Criar a Tela de Alteração de informações do ADM
--->> Próximo Passo: Criar LOGS para os ADMINISTRADORES
--->> Próximo passo: Implementar um banco de Horas (SE NECESSÁRIO)
-
-OBS.: Atualização.: A PASTA DE ARMAZENAMENTO SE ENCONTRA EM C:/PontoEletronico, a pasta Images também tem que estar dentro desta pasta.
-OBS2.: Quando quiser trocar as formas de como popular os espaços em branco ou as faltas mexer em ViewJornada e ColPontosDiarios
+Obs.: Quando quiser trocar as formas de como popular os espaÃ§os em branco ou as faltas mexer em ViewJornada e ColPontosDiarios
