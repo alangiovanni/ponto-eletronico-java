@@ -8,8 +8,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
-import coleções.ColPontosDiarios;
-import coleções.ColUsuarios;
+import coleÃ§Ãµes.ColPontosDiarios;
+import coleÃ§Ãµes.ColUsuarios;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -48,25 +48,25 @@ public class ViewAlteraFolha extends JDialog {
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		
-		JPanel panelInformações = new JPanel();
-		panelInformações.setBounds(10, 11, 758, 355);
-		contentPanel.add(panelInformações);
-		panelInformações.setLayout(null);
+		JPanel panelInformacoes = new JPanel();
+		panelInformacoes.setBounds(10, 11, 758, 355);
+		contentPanel.add(panelInformacoes);
+		panelInformacoes.setLayout(null);
 		
 		JComboBox<String> comboEstagiario = new JComboBox<String>();
 		comboEstagiario.setBounds(85, 52, 105, 27);
-		panelInformações.add(comboEstagiario);
-		//PREENCHENDO O JCOMBO com os ESTAGIÁRIOS
+		panelInformacoes.add(comboEstagiario);
+		//PREENCHENDO O JCOMBO com os ESTAGIï¿½RIOS
 		comboEstagiario.addItem("TODOS");
 		usuarios.preencheComboDeUsuarios(comboEstagiario);
 		
 		JComboBox<Integer> comboDiaInicio = new JComboBox<Integer>();
 		comboDiaInicio.setBounds(321, 53, 105, 26);
-		panelInformações.add(comboDiaInicio);
+		panelInformacoes.add(comboDiaInicio);
 		
 		JComboBox<Integer> comboDiaFim = new JComboBox<Integer>();
 		comboDiaFim.setBounds(511, 53, 105, 26);
-		panelInformações.add(comboDiaFim);
+		panelInformacoes.add(comboDiaFim);
 		
 		//PREENCHE OS COMBOS DE DIAS COM OS DIAS DO MES ATUAL
 		preencheJcomboComOsDiasDoMesAtual(comboDiaInicio, comboDiaFim);
@@ -79,19 +79,19 @@ public class ViewAlteraFolha extends JDialog {
 		lblEstagiario.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblEstagiario.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblEstagiario.setBounds(10, 52, 65, 27);
-		panelInformações.add(lblEstagiario);
+		panelInformacoes.add(lblEstagiario);
 		
 		JLabel lblDiainicio = new JLabel("Dia [In\u00EDcio]:");
 		lblDiainicio.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblDiainicio.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblDiainicio.setBounds(236, 52, 75, 27);
-		panelInformações.add(lblDiainicio);
+		panelInformacoes.add(lblDiainicio);
 		
 		JLabel lblDiafim = new JLabel("Dia [Fim]:");
 		lblDiafim.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblDiafim.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblDiafim.setBounds(436, 52, 65, 27);
-		panelInformações.add(lblDiafim);
+		panelInformacoes.add(lblDiafim);
 		
 		JButton btnExibirAgora = new JButton("Exibir Agora");
 		JButton btnSalvar = new JButton("SALVAR ALTERA\u00C7\u00D5ES");
@@ -106,20 +106,20 @@ public class ViewAlteraFolha extends JDialog {
 		 		apagaRowJtable();
 				 
 				 if(diaInicial > diaFinal)
-					 JOptionPane.showMessageDialog(null, "O dia de Inicio é maior que o dia Final. Por favor corrija o erro invertendo os campos.");
+					 JOptionPane.showMessageDialog(null, "O dia de Inicio ï¿½ maior que o dia Final. Por favor corrija o erro invertendo os campos.");
 				 	else {
 				 		if(comboEstagiario.getSelectedItem().equals("TODOS"))
-				 			//A opção TODOS é apenas uma forma de aplicar a todos a alteração que vinher a ser feita
-				 			JOptionPane.showMessageDialog(null, "Não há como exibir as informações de TODOS na Planilha.\nPreencha corretamente os campos e em seguida clique no botão\n"+btnJustificar.getText()+" para que as alterações sejam aplicadas a TODOS.");
+				 			//A opï¿½ï¿½o TODOS ï¿½ apenas uma forma de aplicar a todos a alteraï¿½ï¿½o que vinher a ser feita
+				 			JOptionPane.showMessageDialog(null, "Nï¿½o hï¿½ como exibir as informaï¿½ï¿½es de TODOS na Planilha.\nPreencha corretamente os campos e em seguida clique no botï¿½o\n"+btnJustificar.getText()+" para que as alteraï¿½ï¿½es sejam aplicadas a TODOS.");
 				 		else {
 					 		String loginUsuario = (String) comboEstagiario.getSelectedItem();
 					 		localArmazenamento = "armazenamento_xml/"+loginUsuario+"/"+retornaMes()+"_"+retornaAno()+".xml";
 					 		pontosDiarios.lerDoXML(localArmazenamento);
 					 		
-					 		//CASO A LISTA ESTEJA VAZIA SIGNIFICA DIZER QUE O USUARIO NÃO LOGOU NO SISTEMA ESTE MES, 
-					 		//POIS A FOLHA DO MES É GERADA QUANDO O USUARIO LOGA NO SISTEMA
+					 		//CASO A LISTA ESTEJA VAZIA SIGNIFICA DIZER QUE O USUARIO Nï¿½O LOGOU NO SISTEMA ESTE MES, 
+					 		//POIS A FOLHA DO MES ï¿½ GERADA QUANDO O USUARIO LOGA NO SISTEMA
 					 		if(pontosDiarios.retornaTamanho() == 0)
-					 			JOptionPane.showMessageDialog(null, "O Usuário: [" + loginUsuario + "] não logou no sistema este mês ainda.", "Erro na captura da folha de ponto", JOptionPane.ERROR_MESSAGE);
+					 			JOptionPane.showMessageDialog(null, "O Usuï¿½rio: [" + loginUsuario + "] nï¿½o logou no sistema este mï¿½s ainda.", "Erro na captura da folha de ponto", JOptionPane.ERROR_MESSAGE);
 					 		else
 					 		//PREENCHENDO A TABELA COM OS DIAS SELECIONADOS
 					 		pontosDiarios.preencherJtableComInicioEFim(table, diaInicial, diaFinal);
@@ -129,12 +129,12 @@ public class ViewAlteraFolha extends JDialog {
 		});
 		btnExibirAgora.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnExibirAgora.setBounds(626, 47, 122, 34);
-		panelInformações.add(btnExibirAgora);
+		panelInformacoes.add(btnExibirAgora);
 		
 		JLabel lblSelecioneCorretamenteO = new JLabel("Selecione um estagi\u00E1rio ou TODOS e o dia ou a sequ\u00EAncia de dias que deseja realizar a altera\u00E7\u00E3o: ");
 		lblSelecioneCorretamenteO.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblSelecioneCorretamenteO.setBounds(10, 11, 748, 30);
-		panelInformações.add(lblSelecioneCorretamenteO);
+		panelInformacoes.add(lblSelecioneCorretamenteO);
 		
 		JRadioButton rdbComum = new JRadioButton("Comum:");
 		textJustificativa = new JTextField();
@@ -165,25 +165,25 @@ public class ViewAlteraFolha extends JDialog {
 		});
 		rdbComum.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		rdbComum.setBounds(10, 201, 83, 23);
-		panelInformações.add(rdbComum);
+		panelInformacoes.add(rdbComum);
 		
 		rdbPersonalizada.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		rdbPersonalizada.setBounds(10, 240, 116, 23);
-		panelInformações.add(rdbPersonalizada);
+		panelInformacoes.add(rdbPersonalizada);
 		
 		JLabel lblSelecioneOAjuste = new JLabel("Selecione a Justificativa, a localiza\u00E7\u00E3o da Justificativa na frequ\u00EAncia e assinatura:");
 		lblSelecioneOAjuste.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblSelecioneOAjuste.setBounds(10, 119, 738, 30);
-		panelInformações.add(lblSelecioneOAjuste);
+		panelInformacoes.add(lblSelecioneOAjuste);
 		
 		JLabel lblAjuste = new JLabel("JUSTIFICATIVA: ");
 		lblAjuste.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblAjuste.setBounds(10, 160, 301, 30);
-		panelInformações.add(lblAjuste);
+		panelInformacoes.add(lblAjuste);
 		
 		comboJustificativa.setModel(new DefaultComboBoxModel<String>(new String[] {" Recesso do TRIBUNAL", " Ferias", " Falta Justificada", " Ausencia por Infermidade", " Problema Familiar", " Feriado", " Expediente Antecipado", " AUSENTE"}));
 		comboJustificativa.setBounds(137, 200, 172, 27);
-		panelInformações.add(comboJustificativa);
+		panelInformacoes.add(comboJustificativa);
 		
 		JRadioButton rdbHoraDeEntrada = new JRadioButton("Hora de Entrada");
 		JRadioButton rdbHoraDeSaida = new JRadioButton("Hora de Sa\u00EDda");
@@ -191,7 +191,7 @@ public class ViewAlteraFolha extends JDialog {
 		JLabel lblAssinatura = new JLabel("ASSINATURA: ");
 		lblAssinatura.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblAssinatura.setBounds(602, 160, 146, 30);
-		panelInformações.add(lblAssinatura);
+		panelInformacoes.add(lblAssinatura);
 		
 		textAssinatura = new JTextField();
 		textAssinatura.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -199,7 +199,7 @@ public class ViewAlteraFolha extends JDialog {
 		textAssinatura.setEnabled(false);
 		textAssinatura.setColumns(10);
 		textAssinatura.setBounds(598, 200, 150, 27);
-		panelInformações.add(textAssinatura);
+		panelInformacoes.add(textAssinatura);
 		
 		JToggleButton tglAssinar = new JToggleButton("Assinar");
 		tglAssinar.addActionListener(new ActionListener() {
@@ -221,14 +221,14 @@ public class ViewAlteraFolha extends JDialog {
 		});
 		tglAssinar.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		tglAssinar.setBounds(598, 235, 122, 34);
-		panelInformações.add(tglAssinar);
+		panelInformacoes.add(tglAssinar);
 		
 		btnJustificar.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnJustificar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				int diaInicial = (int) comboDiaInicio.getSelectedItem();
 				int diaFinal = (int) comboDiaFim.getSelectedItem();
-				int localJustificativa = 3; //Se 1, somente entrada. Se 2, somente saída. Se 3, entrada e saída;
+				int localJustificativa = 3; //Se 1, somente entrada. Se 2, somente saï¿½da. Se 3, entrada e saï¿½da;
 		 		String justificativa;
 		 		String assinatura="";
 		 		
@@ -242,7 +242,7 @@ public class ViewAlteraFolha extends JDialog {
 				
 				//TRATAMENTOS DE ERROS
 				 if(diaInicial > diaFinal){
-					 JOptionPane.showMessageDialog(null, "O dia de Inicio é maior que o dia Final. Por favor corrija o erro invertendo os campos.");
+					 JOptionPane.showMessageDialog(null, "O dia de Inicio ï¿½ maior que o dia Final. Por favor corrija o erro invertendo os campos.");
 				 }
 				 else if (!rdbHoraDeEntrada.isSelected() && !rdbHoraDeSaida.isSelected()){
 					 JOptionPane.showMessageDialog(null, "Selecione pelo menos UM campo onde inserir a JUSTIFICATIVA");
@@ -254,9 +254,9 @@ public class ViewAlteraFolha extends JDialog {
 						 justificativa = (String) comboJustificativa.getSelectedItem();
 					 
 					 if (rdbPersonalizada.isSelected() && justificativa.equals(""))
-						 JOptionPane.showMessageDialog(null, "Não foi passada nenhuma justificativa para ser adicionada a folha de Ponto\nOs campos na data selecionada ficarão em BRANCO, EXCETO Domingos e Sábados.");
+						 JOptionPane.showMessageDialog(null, "Nï¿½o foi passada nenhuma justificativa para ser adicionada a folha de Ponto\nOs campos na data selecionada ficarï¿½o em BRANCO, EXCETO Domingos e Sï¿½bados.");
 						 
-					 //AQUI EU PEGO O LOCAL ONDE SERÁ INSERIDA A JUSTIFICATIVA. 1 PARA APENAS ENTRADA, 2 PARA APENAS SAIDA, 3 PARA AMBOS
+					 //AQUI EU PEGO O LOCAL ONDE SERï¿½ INSERIDA A JUSTIFICATIVA. 1 PARA APENAS ENTRADA, 2 PARA APENAS SAIDA, 3 PARA AMBOS
 					 if(rdbHoraDeEntrada.isSelected() && !rdbHoraDeSaida.isSelected())
 						 localJustificativa = 1;
 					 else
@@ -272,10 +272,10 @@ public class ViewAlteraFolha extends JDialog {
 							 btnSalvar.setEnabled(true);
 				 	}
 					 else {
-						 int confirmacao = JOptionPane.showConfirmDialog(null, "Isto afetará a TODAS as fichas de frequências. Deseja prosseguir com a INSERÇÃO desta justificativa? Dia Inicial: ["+diaInicial+"] | "+"Dia Final: ["+diaFinal+"]");
+						 int confirmacao = JOptionPane.showConfirmDialog(null, "Isto afetarï¿½ a TODAS as fichas de frequï¿½ncias. Deseja prosseguir com a INSERï¿½ï¿½O desta justificativa? Dia Inicial: ["+diaInicial+"] | "+"Dia Final: ["+diaFinal+"]");
 						 if(confirmacao == 0){
 							 if(rdbPersonalizada.isSelected()){ 					 
-									 //O ITEM 0 DO COMBO É TODOS, dessa forma preciso começar do 1
+									 //O ITEM 0 DO COMBO ï¿½ TODOS, dessa forma preciso comeï¿½ar do 1
 									 for(int i = 1; i < comboEstagiario.getItemCount(); i++){
 										 loginUsuario = (String) comboEstagiario.getItemAt(i);
 										 localArmazenamento = "armazenamento_xml/"+loginUsuario+"/"+retornaMes()+"_"+retornaAno()+".xml";
@@ -285,36 +285,36 @@ public class ViewAlteraFolha extends JDialog {
 										 pontosDiarios.salvaEmXML(localArmazenamento);
 									 }
 									 setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-									 JOptionPane.showMessageDialog(null, "As alterações foram salvas automaticamente. Pode fechar a Janela ou apertar o botão de 'VOLTAR'");
+									 JOptionPane.showMessageDialog(null, "As alteraï¿½ï¿½es foram salvas automaticamente. Pode fechar a Janela ou apertar o botï¿½o de 'VOLTAR'");
 							 }
 							 else
-								 JOptionPane.showMessageDialog(null, "Nenhuma Operação foi realizada");
+								 JOptionPane.showMessageDialog(null, "Nenhuma Operaï¿½ï¿½o foi realizada");
 						 }
 					 }
 				 }
 			}
 		});
 		btnJustificar.setBounds(290, 308, 172, 34);
-		panelInformações.add(btnJustificar);
+		panelInformacoes.add(btnJustificar);
 		
 		textJustificativa.setBounds(137, 236, 172, 27);
-		panelInformações.add(textJustificativa);
+		panelInformacoes.add(textJustificativa);
 		textJustificativa.setColumns(10);
 		
 		JLabel lblFrequencia = new JLabel("LOCAL NA FREQU\u00CANCIA:");
 		lblFrequencia.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblFrequencia.setBounds(358, 160, 234, 30);
-		panelInformações.add(lblFrequencia);
+		panelInformacoes.add(lblFrequencia);
 		
 		rdbHoraDeEntrada.setSelected(true);
 		rdbHoraDeEntrada.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		rdbHoraDeEntrada.setBounds(358, 201, 234, 23);
-		panelInformações.add(rdbHoraDeEntrada);
+		panelInformacoes.add(rdbHoraDeEntrada);
 		
 		rdbHoraDeSaida.setSelected(true);
 		rdbHoraDeSaida.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		rdbHoraDeSaida.setBounds(358, 240, 234, 23);
-		panelInformações.add(rdbHoraDeSaida);
+		panelInformacoes.add(rdbHoraDeSaida);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 377, 758, 223);
@@ -326,7 +326,7 @@ public class ViewAlteraFolha extends JDialog {
 			new Object[][] {
 			},
 			new String[] {
-				"Dia", "Hora de Entrada", "Hora de Saída", "Assinatura"
+				"Dia", "Hora de Entrada", "Hora de Saï¿½da", "Assinatura"
 			}
 		));
 		scrollPane.setViewportView(table);
@@ -370,7 +370,7 @@ public class ViewAlteraFolha extends JDialog {
 	}
 	protected int retornaMes(){
 		Calendar calendario = Calendar.getInstance();
-		//É NECESSÁRIO PEGAR O RESULTADO +1 POIS A CONTAGEM DOS MESES COMEÇAM DO 0, SENDO JANEIRO = 0;
+		//ï¿½ NECESSï¿½RIO PEGAR O RESULTADO +1 POIS A CONTAGEM DOS MESES COMEï¿½AM DO 0, SENDO JANEIRO = 0;
 		return (calendario.get(Calendar.MONTH)+1);
 	}
 	

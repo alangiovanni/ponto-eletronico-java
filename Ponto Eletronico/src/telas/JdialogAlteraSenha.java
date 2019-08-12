@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import classes.Usuario;
-import coleções.ColUsuarios;
+import coleÃ§Ãµes.ColUsuarios;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -65,7 +65,7 @@ public class JdialogAlteraSenha extends JDialog {
 				cancelar.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						char [] novaSenha = textSenha.getPassword();
-						//Necessário converter para comparar se é uma STRING vazia
+						//Necessï¿½rio converter para comparar se ï¿½ uma STRING vazia
 						if(String.valueOf(novaSenha).equals(""))
 							JOptionPane.showMessageDialog(null, "ERRO: Por favor Defina uma NOVA SENHA");
 						else {
@@ -80,7 +80,7 @@ public class JdialogAlteraSenha extends JDialog {
 							if(usuarioLogado.getSenha().equals(novaSenha))
 							JOptionPane.showMessageDialog(null, "Senha alterada com sucesso");
 							else {
-								JOptionPane.showMessageDialog(null, "ERRO.: Senha não alterada");
+								JOptionPane.showMessageDialog(null, "ERRO.: Senha nï¿½o alterada");
 							}
 								
 							

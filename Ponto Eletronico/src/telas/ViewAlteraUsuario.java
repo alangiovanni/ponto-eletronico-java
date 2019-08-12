@@ -15,8 +15,8 @@ import java.awt.Component;
 import javax.swing.border.TitledBorder;
 
 import classes.Usuario;
-import coleções.ColPontosDiarios;
-import coleções.ColUsuarios;
+import coleÃ§Ãµes.ColPontosDiarios;
+import coleÃ§Ãµes.ColUsuarios;
 
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
@@ -91,7 +91,7 @@ public class ViewAlteraUsuario extends JFrame {
 				textLotacao.setEnabled(true);
 				textLogin.setEnabled(true);
 				
-				//PERMITO REALIZAR A ALTERAÇÃO
+				//PERMITO REALIZAR A ALTERAï¿½ï¿½O
 				btnSalvar.setEnabled(true);
 			}
 		});
@@ -218,9 +218,9 @@ public class ViewAlteraUsuario extends JFrame {
 				else{
 					if(rdbSim.isSelected()){
 						novaSenha = textSenha.getPassword();
-						//Necessário converter para comparar se é uma STRING vazia
+						//Necessï¿½rio converter para comparar se ï¿½ uma STRING vazia
 						if(String.valueOf(novaSenha).equals(""))
-							JOptionPane.showMessageDialog(null, "ERRO: Por favor Defina uma NOVA SENHA para o ESTAGIÁRIO.");
+							JOptionPane.showMessageDialog(null, "ERRO: Por favor Defina uma NOVA SENHA para o ESTAGIï¿½RIO.");
 						else {
 							inforEstagiario.setLogin(login);
 							inforEstagiario.setLotacao(lotacao);
@@ -228,14 +228,14 @@ public class ViewAlteraUsuario extends JFrame {
 							inforEstagiario.setSenha(novaSenha);
 							usuarios.salvaEmXML(localArmazenamentoUsuario);
 							
-							//Trecho necessário para poder setar as novas informações dentro da coleção de pontos
+							//Trecho necessï¿½rio para poder setar as novas informaï¿½ï¿½es dentro da coleï¿½ï¿½o de pontos
 							ColPontosDiarios listaTemporaria = new ColPontosDiarios();
 							listaTemporaria.lerDoXML(localArmazenamento);
 							listaTemporaria.setAllNomes(nome, login);
 							listaTemporaria.setAllLotacao(lotacao);
 							listaTemporaria.salvaEmXML(localArmazenamento);
 							
-							JOptionPane.showMessageDialog(null, "NOVA SENHA definida e Informações de " + nome + " atualizadas com SUCESSO");
+							JOptionPane.showMessageDialog(null, "NOVA SENHA definida e Informaï¿½ï¿½es de " + nome + " atualizadas com SUCESSO");
 							//Limpar todos os campos e setar algumas funcionalidades
 							limparCampos();
 							btnSalvar.setEnabled(false);
@@ -253,14 +253,14 @@ public class ViewAlteraUsuario extends JFrame {
 						inforEstagiario.setNome(nome);
 						usuarios.salvaEmXML(localArmazenamentoUsuario);
 						
-						//Trecho necessário para poder setar as novas informações dentro da coleção de pontos
+						//Trecho necessï¿½rio para poder setar as novas informaï¿½ï¿½es dentro da coleï¿½ï¿½o de pontos
 						ColPontosDiarios listaTemporaria = new ColPontosDiarios();
 						listaTemporaria.lerDoXML(localArmazenamento);
 						listaTemporaria.setAllNomes(nome, login);
 						listaTemporaria.setAllLotacao(lotacao);
 						listaTemporaria.salvaEmXML(localArmazenamento);
 						
-						JOptionPane.showMessageDialog(null, "Informações de " + nome + " atualizadas com SUCESSO");
+						JOptionPane.showMessageDialog(null, "Informaï¿½ï¿½es de " + nome + " atualizadas com SUCESSO");
 						//Limpar todos os campos e setar algumas funcionalidades
 						limparCampos();
 						btnSalvar.setEnabled(false);
@@ -279,7 +279,7 @@ public class ViewAlteraUsuario extends JFrame {
 	
 	private int retornaMes(){
 		Calendar calendario = Calendar.getInstance();
-		//É NECESSÁRIO PEGAR O RESULTADO +1 POIS A CONTAGEM DOS MESES COMEÇAM DO 0, SENDO JANEIRO = 0;
+		//ï¿½ NECESSï¿½RIO PEGAR O RESULTADO +1 POIS A CONTAGEM DOS MESES COMEï¿½AM DO 0, SENDO JANEIRO = 0;
 		return (calendario.get(Calendar.MONTH)+1);
 	}
 	

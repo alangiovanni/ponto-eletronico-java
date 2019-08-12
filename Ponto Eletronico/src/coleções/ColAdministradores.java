@@ -1,4 +1,4 @@
-package coleções;
+package coleÃ§Ãµes;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -34,7 +34,7 @@ public class ColAdministradores implements Serializable{
 	}
 	
 	public boolean autenticacao(String login, char[] senha){
-		//Necessário a conversão da senha para string antes de testar se a autenticação do usuario
+		//Necessï¿½rio a conversï¿½o da senha para string antes de testar se a autenticaï¿½ï¿½o do usuario
 		String senhaConvertidaRecebida = new String (senha);
 		String senhaConvertidaSalvaNaLista;
 		for(UsuarioAdmin user: colAdministradores) {
@@ -88,7 +88,7 @@ public class ColAdministradores implements Serializable{
 	public void lerDoXML(String localArmazenamento){
 		try {
 			XStream xStream = new XStream(new StaxDriver());
-			//Questões de segurança
+			//Questï¿½es de seguranï¿½a
 			XStream.setupDefaultSecurity(xStream);
 			xStream.addPermission(AnyTypePermission.ANY); 
 			xStream.alias("Usuario_Administrador", UsuarioAdmin.class);

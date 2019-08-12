@@ -4,9 +4,9 @@
  * @since 01 March 2018
  * @CommentLanguage Pt-Br
  * 
- * Esta coleção representa um ARRAY de Usuarios que acessarão o Ponto eletrônico
+ * Esta coleÃ§Ã£o representa um ARRAY de Usuarios que irÃ£o ter acesso ao Ponto eletrÃ´nico
  */
-package coleções;
+package coleÃ§Ãµes;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -46,7 +46,7 @@ public class ColUsuarios implements Serializable{
 	}
 	
 	public boolean autenticacao(String login, char[] senha){
-		//Necessário a conversão da senha para string antes de testar se a autenticação do usuario
+		//Necessï¿½rio a conversï¿½o da senha para string antes de testar se a autenticaï¿½ï¿½o do usuario
 		String senhaConvertidaRecebida = new String (senha);
 		String senhaConvertidaSalvaNaLista;
 		for(Usuario user: colUsuarios) {
@@ -91,7 +91,7 @@ public class ColUsuarios implements Serializable{
 	public void lerDoXML(String localArmazenamento){
 		try {
 			XStream xStream = new XStream(new StaxDriver());
-			//Questões de segurança
+			//Questï¿½es de seguranï¿½a
 			XStream.setupDefaultSecurity(xStream);
 			xStream.addPermission(AnyTypePermission.ANY); 
 			xStream.alias("Usuario", Usuario.class);

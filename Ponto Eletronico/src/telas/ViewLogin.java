@@ -8,8 +8,8 @@ import javax.swing.border.EmptyBorder;
 
 import classes.Usuario;
 import classes.UsuarioAdmin;
-import coleções.ColAdministradores;
-import coleções.ColUsuarios;
+import coleÃ§Ãµes.ColAdministradores;
+import coleÃ§Ãµes.ColUsuarios;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -60,7 +60,7 @@ public class ViewLogin extends JFrame {
 		ColAdministradores administradores = new ColAdministradores();
 		setResizable(false);
 		
-		//CRIO OS DIRETORIO NECESSÁRIOS
+		//CRIO OS DIRETORIO NECESSï¿½RIOS
         File pastaInicial = new File("armazenamento_xml/admin");
         pastaInicial.mkdirs();
 		
@@ -72,7 +72,7 @@ public class ViewLogin extends JFrame {
 		if(existeXML("armazenamento_xml/admin/ColAdministradores.xml")){
 			administradores.lerDoXML("armazenamento_xml/admin/ColAdministradores.xml");
 		} else {
-			//Cria Admin Padrão
+			//Cria Admin Padrï¿½o
 			char [] senha = "admin".toCharArray();
 			UsuarioAdmin adminPadrao = new UsuarioAdmin("admin", senha, "Administrador Padrao");
 			administradores.adicionaUsuarioNaLista(adminPadrao);
@@ -134,7 +134,7 @@ public class ViewLogin extends JFrame {
 						obj.setVisible(true);
 						dispose();
 					} else {
-						JOptionPane.showMessageDialog (null, "NÃO ENCONTRAMOS ESTE USUARIO E SENHA EM NOSSO SISTEMA","ERRO DE AUTENTICAÇÃO", JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog (null, "Nï¿½O ENCONTRAMOS ESTE USUARIO E SENHA EM NOSSO SISTEMA","ERRO DE AUTENTICAï¿½ï¿½O", JOptionPane.ERROR_MESSAGE);
 						textLogin.setText("");
 						textSenha.setText("");
 					}

@@ -9,7 +9,7 @@ import java.awt.Component;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import classes.UsuarioAdmin;
-import coleções.ColAdministradores;
+import coleÃ§Ãµes.ColAdministradores;
 
 import javax.swing.JTextField;
 import javax.swing.JButton;
@@ -69,7 +69,7 @@ public class ViewAdminCadastro extends JDialog {
 				char [] senha = textSenha.getPassword();
 				
 				if(administradores.retornaUsuarioAdmin(login) != null){
-					JOptionPane.showMessageDialog(null, "USUARIO "+login+" JÁ ESTÁ CADASTRADO", "ERRO DE CADASTRO", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "USUARIO "+login+" Jï¿½ ESTï¿½ CADASTRADO", "ERRO DE CADASTRO", JOptionPane.ERROR_MESSAGE);
 				} else{
 		            try{
 		            	//TENTO CADASTRAR O USUARIO

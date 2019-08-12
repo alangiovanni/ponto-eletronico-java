@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import classes.Usuario;
-import coleções.ColUsuarios;
+import coleÃ§Ãµes.ColUsuarios;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -71,11 +71,11 @@ public class ViewRemoveUsuario extends JFrame {
 				usuarios.salvaEmXML("armazenamento_xml/ColUsuarios.xml");
 				try{
 					removeDiretorio(loginEstagiario);
-					JOptionPane.showMessageDialog(null, "Usuário Removido com Sucesso!");
+					JOptionPane.showMessageDialog(null, "Usuï¿½rio Removido com Sucesso!");
 					//Removendo o usuario
 					comboEstagiario.removeItem(loginEstagiario);
 				} catch (Exception erro){
-					JOptionPane.showMessageDialog(null, "Erro ao EXCLUIR diretório, tente excluir manualmente.\nInformações do Erro: " +erro, "ERRO AO EXCLUIR DIRETORIO", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "Erro ao EXCLUIR diretï¿½rio, tente excluir manualmente.\nInformaï¿½ï¿½es do Erro: " +erro, "ERRO AO EXCLUIR DIRETORIO", JOptionPane.ERROR_MESSAGE);
 				}
 				
 			}

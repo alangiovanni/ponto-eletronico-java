@@ -10,7 +10,7 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 
 import classes.UsuarioAdmin;
-import coleções.ColAdministradores;
+import coleÃ§Ãµes.ColAdministradores;
 
 import javax.swing.JComboBox;
 import javax.swing.JButton;
@@ -70,7 +70,7 @@ public class ViewAdminRemove extends JDialog {
 					JOptionPane.showMessageDialog(null, "Administrador Excluido do Sistema!");
 					comboBox.removeItem(loginAdmin);
 				} else
-					JOptionPane.showMessageDialog(null, "Só há um único administrador no sistema você não pode excluí-lo");
+					JOptionPane.showMessageDialog(null, "Sï¿½ hï¿½ um ï¿½nico administrador no sistema vocï¿½ nï¿½o pode excluï¿½-lo");
 			}
 		});
 		button.setFont(new Font("Tahoma", Font.PLAIN, 13));

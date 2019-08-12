@@ -8,8 +8,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import classes.PontoDiario;
-import coleções.ColPontosDiarios;
-import coleções.ColUsuarios;
+import coleÃ§Ãµes.ColPontosDiarios;
+import coleÃ§Ãµes.ColUsuarios;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -50,13 +50,13 @@ public class ViewPrincipal extends JFrame {
 		if(existeXML(armazenamentoPontos)){
 			pontosDiarios.lerDoXML(armazenamentoPontos);
 		} else {
-			//Atualizando e Ordenando minha coleção INICIALMENTE
+			//Atualizando e Ordenando minha coleï¿½ï¿½o INICIALMENTE
 			pontosDiarios.ordenaLista(pontosDiarios.popularColecao(retornaMes()-1, String.valueOf(retornaAno())), armazenamentoPontos, retornaMes()-1, String.valueOf(retornaAno()));
-			//Seto todos os nomes e logins na coleção
+			//Seto todos os nomes e logins na coleï¿½ï¿½o
 			pontosDiarios.setAllNomes(nome, login);
-			//Seto mes e ano na coleção
+			//Seto mes e ano na coleï¿½ï¿½o
 			pontosDiarios.setAllMesAno(retornaMes(), retornaAno());
-			//Seto a lotacao na coleção
+			//Seto a lotacao na coleï¿½ï¿½o
 			pontosDiarios.setAllLotacao(lotacao);
 			//Salvo em XML
 			pontosDiarios.salvaEmXML(armazenamentoPontos);;
@@ -65,10 +65,10 @@ public class ViewPrincipal extends JFrame {
 		//BUSCA A DATA DE HOJE
 		int dia = retornaDia();
         
-		//Procurando por algum registro de Ponto do Usuário Autenticado na DATA DE HOJE
+		//Procurando por algum registro de Ponto do Usuï¿½rio Autenticado na DATA DE HOJE
 		PontoDiario RecebePontoDoUsuario = pontosDiarios.retornaUsuarioPelaData(dia);
 		
-		//DESABILITANDO OS BOTÕES CASO O USUÁRIO JÁ TENHA BATIDO O PONTO
+		//DESABILITANDO OS BOTï¿½ES CASO O USUï¿½RIO Jï¿½ TENHA BATIDO O PONTO
 		if(RecebePontoDoUsuario.getHoraEntrada().equals("")){
 		} else {
 			btnAbrir.setEnabled(false);
@@ -76,7 +76,7 @@ public class ViewPrincipal extends JFrame {
 			if(RecebePontoDoUsuario.getHoraSaida().equals("")){
 			} else {
 				btnFechar.setEnabled(false);
-				btnFechar.setText("SAÍDA MARCADA");
+				btnFechar.setText("SAï¿½DA MARCADA");
 			}
 		}
 		
@@ -103,7 +103,7 @@ public class ViewPrincipal extends JFrame {
 	                String horaAtual = retornaHoraAtual();
 	                lblHora.setText(horaAtual);    
 	                try {
-	                    Thread.sleep(1000); //espera 1 segundo para fazer a nova evolução
+	                    Thread.sleep(1000); //espera 1 segundo para fazer a nova evoluï¿½ï¿½o
 	                } catch(InterruptedException ex){
 	                }
 	            }
@@ -148,19 +148,19 @@ public class ViewPrincipal extends JFrame {
 				//DATA DE HOJE
 				int dia = retornaDia();
 				
-				//Pegando a frequência do usuário pela data de hoje
+				//Pegando a frequï¿½ncia do usuï¿½rio pela data de hoje
 				PontoDiario novoPonto = pontosDiarios.retornaUsuarioPelaData(dia);
 				
 				if(!novoPonto.getHoraEntrada().equals("")){
-					//Aqui eu Pego a hora atual, Seto a hora da saída, coloco a assinatura do usuario e salvo as informações em XML
+					//Aqui eu Pego a hora atual, Seto a hora da saï¿½da, coloco a assinatura do usuario e salvo as informaï¿½ï¿½es em XML
 					String horaSaida = retornaHoraAtual();
 					novoPonto.setHoraSaida(horaSaida);
 					novoPonto.setAssinatura(login);
 					pontosDiarios.salvaEmXML(armazenamentoPontos);
 					btnFechar.setEnabled(false);
-					btnFechar.setText("SAÍDA MARCADA");
+					btnFechar.setText("SAï¿½DA MARCADA");
 				} else {
-					JOptionPane.showMessageDialog(null, "VOCÊ PRECISA ABRIR O PONTO PRIMEIRO!");
+					JOptionPane.showMessageDialog(null, "VOCï¿½ PRECISA ABRIR O PONTO PRIMEIRO!");
 				}
 
 			}
@@ -206,7 +206,7 @@ public class ViewPrincipal extends JFrame {
 		panelInformativo.add(textInforUsuario);
 		textInforUsuario.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		textInforUsuario.setEditable(false);
-		textInforUsuario.setText(retornaCumprimento()+"\nNome do Estagiario: " + nome + "\rLotação: " + lotacao);
+		textInforUsuario.setText(retornaCumprimento()+"\nNome do Estagiario: " + nome + "\rLotaï¿½ï¿½o: " + lotacao);
 		
 		JButton btnAlterarSenha = new JButton("Alterar Senha");
 		btnAlterarSenha.addActionListener(new ActionListener() {
@@ -244,7 +244,7 @@ public class ViewPrincipal extends JFrame {
 	
 	private int retornaMes(){
 		Calendar calendario = Calendar.getInstance();
-		//É NECESSÁRIO PEGAR O RESULTADO +1 POIS A CONTAGEM DOS MESES COMEÇAM DO 0, SENDO JANEIRO = 0;
+		//ï¿½ NECESSï¿½RIO PEGAR O RESULTADO +1 POIS A CONTAGEM DOS MESES COMEï¿½AM DO 0, SENDO JANEIRO = 0;
 		return (calendario.get(Calendar.MONTH)+1);
 	}
 	

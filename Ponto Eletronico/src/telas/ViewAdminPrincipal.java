@@ -15,9 +15,9 @@ import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
 
 import JasperReport.Relatorio;
-import coleções.ColAdministradores;
-import coleções.ColPontosDiarios;
-import coleções.ColUsuarios;
+import coleÃ§Ãµes.ColAdministradores;
+import coleÃ§Ãµes.ColPontosDiarios;
+import coleÃ§Ãµes.ColUsuarios;
 import net.sf.jasperreports.engine.JRException;
 
 import javax.swing.JComboBox;
@@ -161,7 +161,7 @@ public class ViewAdminPrincipal extends JFrame {
 			new Object[][] {
 			},
 			new String[] {
-				"Dia", "Hora de Entrada", "Hora de Saída", "Assinatura"
+				"Dia", "Hora de Entrada", "Hora de Saï¿½da", "Assinatura"
 			}
 		));
 		scrollPane.setViewportView(table);
@@ -257,20 +257,20 @@ public class ViewAdminPrincipal extends JFrame {
 							File localArmazenamento = new File("armazenamento_xml/"+loginEstagiario+"/"+mes+"_"+ano+".xml");
 							
 							if(localArmazenamento.exists()){
-								//Se os pontos do usuario existirem, carrega na variável
+								//Se os pontos do usuario existirem, carrega na variï¿½vel
 								pontosDiarios.lerDoXML(localArmazenamento.getAbsolutePath());
 								//Gerando Relatorio Individual
 								gerarRelatorio.pdf(pontosDiarios, nomeDoArquivo);
 							}
 						}
-						JOptionPane.showMessageDialog(null, "Relatórios Criados com Sucesso!");
+						JOptionPane.showMessageDialog(null, "Relatï¿½rios Criados com Sucesso!");
 					} catch (JRException e1) {
 						// TODO Auto-generated catch block
 						JOptionPane.showMessageDialog(null, "Erro: "+e1);
 					}
 	            }
 	            else
-	                JOptionPane.showMessageDialog(null, "Você não selecionou nenhum diretorio. Repita a operação!", "Nenhum diretório Selecionado", JOptionPane.ERROR_MESSAGE);
+	                JOptionPane.showMessageDialog(null, "Vocï¿½ nï¿½o selecionou nenhum diretorio. Repita a operaï¿½ï¿½o!", "Nenhum diretï¿½rio Selecionado", JOptionPane.ERROR_MESSAGE);
 			}
 		});
 		

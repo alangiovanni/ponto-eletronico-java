@@ -12,7 +12,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
 import JasperReport.Relatorio;
-import coleções.ColPontosDiarios;
+import coleÃ§Ãµes.ColPontosDiarios;
 import net.sf.jasperreports.engine.JRException;
 
 import javax.swing.border.LineBorder;
@@ -80,7 +80,7 @@ public class ViewJornada extends JFrame {
 		JComboBox comboMes = new JComboBox();
 		comboMes.setBounds(71, 12, 85, 22);
 		panelDados.add(comboMes);
-		comboMes.setModel(new DefaultComboBoxModel(new String[] {"Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"}));
+		comboMes.setModel(new DefaultComboBoxModel(new String[] {"Janeiro", "Fevereiro", "Marï¿½o", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"}));
 		comboMes.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		//Setando o mes atual no combo BOx
 		comboMes.setSelectedIndex(retornaMes());
@@ -149,7 +149,7 @@ public class ViewJornada extends JFrame {
 				if(existeXML(diretorioDoUsuario+mes+"_"+ano+".xml")){
 					pontosDiarios.lerDoXML(diretorioDoUsuario+mes+"_"+ano+".xml");
 					
-					//Atualizando e Ordenando minha coleção
+					//Atualizando e Ordenando minha coleï¿½ï¿½o
 					pontosDiarios.ordenaLista(pontosDiarios.popularColecao(mes-1, ano), armazenamentoPontos, mes-1, ano);
 					pontosDiarios.popularDiasAusente();
 					pontosDiarios.preencherJtable(table, mes-1, ano);
@@ -159,7 +159,7 @@ public class ViewJornada extends JFrame {
 					JOptionPane.showMessageDialog(null, "Nao foi encontrado nenhum registro na DATA informada");
 					btnImprimir.setEnabled(false);
 				}
-				//RECUPERANDO AS INFORMAÇOES SALVAS EM XML E CARREGANDO NA VARIÁVEL
+				//RECUPERANDO AS INFORMAï¿½OES SALVAS EM XML E CARREGANDO NA VARIï¿½VEL
 				pontosDiarios.lerDoXML(armazenamentoPontos);
 			}
 		});
@@ -176,7 +176,7 @@ public class ViewJornada extends JFrame {
 	            	pontosDiarios.lerDoXML(diretorioDoUsuario+mes+"_"+ano+".xml");
 					novoRelatorio.load(pontosDiarios);
 					
-					//Retomando a lista do mês atual
+					//Retomando a lista do mï¿½s atual
 					pontosDiarios.lerDoXML(armazenamentoPontos);
 					
 				} catch (JRException e1) {

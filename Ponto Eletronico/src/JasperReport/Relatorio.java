@@ -4,7 +4,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 
 import classes.PontoDiario;
-import coleções.ColPontosDiarios;
+import coleÃ§Ãµes.ColPontosDiarios;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
@@ -24,7 +24,7 @@ public class Relatorio {
 		InputStream arquivoJasper = Relatorio.class.getClassLoader().getResourceAsStream("JasperReport/reports/FolhaDePontoOficial.jasper");
 		ArrayList<PontoDiario> listaPonto = pontosDiarios.retornaLista();
 		JasperPrint jasperPrint = JasperFillManager.fillReport(arquivoJasper, null, new JRBeanCollectionDataSource(listaPonto));
-		//Nome do arquivo com extensão PDF
+		//Nome do arquivo com extensï¿½o PDF
 		JasperExportManager.exportReportToPdfFile(jasperPrint, nomeDoArquivo);
 	}
 }

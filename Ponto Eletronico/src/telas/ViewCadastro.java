@@ -5,7 +5,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import classes.Usuario;
-import coleções.ColUsuarios;
+import coleÃ§Ãµes.ColUsuarios;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -98,7 +98,7 @@ public class ViewCadastro extends JFrame {
 				char [] senha = textPassword.getPassword();
 				
 				if(usuarios.retornaUsuario(login) != null){
-					JOptionPane.showMessageDialog(null, "USUARIO "+login+" JÁ ESTÁ CADASTRADO", "ERRO DE CADASTRO", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "USUARIO "+login+" Jï¿½ ESTï¿½ CADASTRADO", "ERRO DE CADASTRO", JOptionPane.ERROR_MESSAGE);
 				} else{
 					try {
 						//CRIO O DIRETORIO COM O LOGIN DO USUARIO DENTRO DA PASTA ARMAZENAMENTO

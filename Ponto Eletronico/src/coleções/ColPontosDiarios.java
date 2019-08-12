@@ -1,4 +1,4 @@
-package coleções;
+package coleÃ§Ãµes;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -29,9 +29,9 @@ public class ColPontosDiarios {
 		colPontosDiarios.add(novoPonto);
 	}
 	
-	//TODOS OS METODOS SET ALL ... É PARA O JASPERVIEW NÃO BUGAR NO MOMENTO DE SETAR A VARIÁVEL COM AS INFORMAÇÕES SOLICITADAS
+	//TODOS OS METODOS SET ALL ... ï¿½ PARA O JASPERVIEW Nï¿½O BUGAR NO MOMENTO DE SETAR A VARIï¿½VEL COM AS INFORMAï¿½ï¿½ES SOLICITADAS
 	public void setAllNomes(String nome, String assinatura){
-		//Adiciona em todos os pontos batidos pelo usuario o nome dele na variável nome;
+		//Adiciona em todos os pontos batidos pelo usuario o nome dele na variï¿½vel nome;
 		for(PontoDiario ponto: colPontosDiarios){
 			ponto.setNome(nome);
 			if(ponto.getHoraEntrada().equals("AUSENTE") || ponto.getHoraEntrada().equals("SABADO") || ponto.getHoraEntrada().equals("DOMINGO") || ponto.getHoraEntrada().equals("")){
@@ -44,7 +44,7 @@ public class ColPontosDiarios {
 	}
 	
 	public void setAllMesAno(int mes, int ano){
-		//Adiciona em todos os pontos batidos pelo usuario o nome dele na variável nome;
+		//Adiciona em todos os pontos batidos pelo usuario o nome dele na variï¿½vel nome;
 		for(PontoDiario ponto: colPontosDiarios){
 			ponto.setMes(mes);
 			ponto.setAno(ano);
@@ -98,7 +98,7 @@ public class ColPontosDiarios {
 		listaAtualizada.add(novoPonto);
 	}
 	
-	//ATUALIZA A COLEÇÃO PASSANDO OS SABADOS, DOMINGOS E FALTAS DO USUARIO
+	//ATUALIZA A COLEï¿½ï¿½O PASSANDO OS SABADOS, DOMINGOS E FALTAS DO USUARIO
 	public ArrayList<PontoDiario> popularColecao(int mes, String ano){
 		 int i;
 		 int QtdeDeDiasDaDataRecebida = retornaQtdeDeDiasDoMes(mes,Integer.valueOf(ano));
@@ -108,7 +108,7 @@ public class ColPontosDiarios {
 		 listaAtualizada = colPontosDiarios;
 		 
 		 for (i=1; i<=QtdeDeDiasDaDataRecebida; i++) {
-			//ATRIBUINDO O DIA AO CALENDARIO SALVO PARA VERFICAR SE É DIA DE SEMANA SE NÃO FOR EU PREENCHO COM O DIA CORRESPONDENTE
+			//ATRIBUINDO O DIA AO CALENDARIO SALVO PARA VERFICAR SE ï¿½ DIA DE SEMANA SE Nï¿½O FOR EU PREENCHO COM O DIA CORRESPONDENTE
 			 calendario.set(Calendar.DAY_OF_MONTH, i);
 			 //Campos em branco
 			 fimDeSemana = "";
@@ -158,7 +158,7 @@ public class ColPontosDiarios {
 			}
 		}
 	 }
-	//RETIRAR ESSA FUNÇÃO DAQUI -- USADA EM VIEW ALTERA FOLHA
+	//RETIRAR ESSA FUNï¿½ï¿½O DAQUI -- USADA EM VIEW ALTERA FOLHA
 	public void preencherJtableComInicioEFim(JTable table, int diaInicio, int diaFim) {
 		 //Aqui pego o modelo da Tabela
 		 DefaultTableModel modeloTable;
@@ -176,9 +176,9 @@ public class ColPontosDiarios {
 		}
 	 }
 	
-	//CASO A VARIAVEL BOOLEANA SEJA TRUE SERÁ IMPRESSO O RESULTADO NO JTABLE
-	//localJustificativa é uma variavel que receberá inteiros para poder atribuir corretamente onde será aplicada a justificativa.
-	//Se 1, justificativa na entrada, se 2, justificativa na saída, se 3 justificativa na entrada e na saída
+	//CASO A VARIAVEL BOOLEANA SEJA TRUE SERï¿½ IMPRESSO O RESULTADO NO JTABLE
+	//localJustificativa ï¿½ uma variavel que receberï¿½ inteiros para poder atribuir corretamente onde serï¿½ aplicada a justificativa.
+	//Se 1, justificativa na entrada, se 2, justificativa na saï¿½da, se 3 justificativa na entrada e na saï¿½da
 	public void justificaFolhaDePonto(JTable table, int diaInicial, int diaFinal, String justificativa, int localJustificativa, String assinatura, boolean imprimeNaTabela){
 		//Aqui pego o modelo da Tabela
 		DefaultTableModel modeloTable;
@@ -239,7 +239,7 @@ public class ColPontosDiarios {
 	public void lerDoXML(String localArmazenamento){
 		try {
 			XStream xStream = new XStream(new StaxDriver());
-			//Questões de segurança
+			//Questï¿½es de seguranï¿½a
 			XStream.setupDefaultSecurity(xStream);
 			xStream.addPermission(AnyTypePermission.ANY); 
 			xStream.alias("Ponto_Diario", PontoDiario.class);
