@@ -168,7 +168,7 @@ public class ViewLogin extends JFrame {
 		lblLogoTRE.setBounds(5, 6, 95, 90);
 		contentPane.add(lblLogoTRE);
 		
-		JLabel lblDesenvolvedor = new JLabel("Em desenvolvimento por ALAN GIOVANNI (alan.targino@tre-pb.jus.br) - Estagi\u00E1rio da SEINF");
+		JLabel lblDesenvolvedor = new JLabel("Em desenvolvimento por ALAN GIOVANNI (agmtargino@gmail.com.br) - Estagi\u00E1rio da SEINF");
 		lblDesenvolvedor.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
 		lblDesenvolvedor.setHorizontalAlignment(SwingConstants.LEFT);
 		lblDesenvolvedor.setForeground(new Color(255, 255, 0));
